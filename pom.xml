@@ -68,10 +68,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven.compiler.version}</version>
-                <configuration>
+                <version>3.10.1</version>
+<!--                <configuration>
                     <release>3.10.1</release>
-                </configuration>
+                </configuration>-->
             </plugin>
             <!-- To run the tests using specific parameters, change thread count, testng report output directory etc -->
             <plugin>
