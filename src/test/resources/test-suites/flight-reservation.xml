@@ -1,0 +1,9 @@
+<suite name="flight-reservation">
+    <test name = "passengers-count-1">
+        <parameter name="noOfPassengers" value="1"/>
+        <parameter name="expectedPrice" value="$584 USD" />
+        <classes>
+            <class name="com.rahulautodev.tests.flightreservation.FlightReservationTest" />
+        </classes>
+    </test>
+</suite>
