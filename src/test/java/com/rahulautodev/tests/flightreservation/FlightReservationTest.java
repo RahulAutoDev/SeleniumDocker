@@ -31,6 +31,9 @@ public class FlightReservationTest {
         option.addArguments("--ignore-certificate-errors");
         option.addArguments("--silent");
         option.addArguments("--remote-allow-origins=*");
+        option.addArguments("--no-sandbox");
+        option.addArguments("--disable-dev-shm-usage");
+
         this.driver = new ChromeDriver(option);
     }
 
