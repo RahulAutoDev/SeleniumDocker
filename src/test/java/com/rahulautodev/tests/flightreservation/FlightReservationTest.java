@@ -4,6 +4,7 @@ import com.rahulautodev.pages.flightreservation.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -23,7 +24,14 @@ public class FlightReservationTest {
         this.noOfPassengers = noOfPassengers;
         this.expectedPrice = expectedPrice;
         WebDriverManager.chromedriver().setup();
-        this.driver = new ChromeDriver();
+        ChromeOptions option = new ChromeOptions();
+        option.addArguments("--headless");
+        option.addArguments("--disable-gpu");
+        option.addArguments("--window-size=1920,1200");
+        option.addArguments("--ignore-certificate-errors");
+        option.addArguments("--silent");
+        option.addArguments("--remote-allow-origins=*");
+        this.driver = new ChromeDriver(option);
     }
 
     @Test
