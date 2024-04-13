@@ -1,6 +1,8 @@
 package com.rahulautodev.tests.flightreservation;
 
+import com.rahulautodev.pages.AbstractPage;
 import com.rahulautodev.pages.flightreservation.*;
+import com.rahulautodev.tests.AbstractTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,30 +13,18 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class FlightReservationTest {
+public class FlightReservationTest extends AbstractTest{
 
-    private WebDriver driver;
     private String expectedPrice;
     private String noOfPassengers;
 
-    @BeforeTest
+
+   @BeforeTest
     @Parameters({"noOfPassengers", "expectedPrice"})
-    public void setDriver(String noOfPassengers, String expectedPrice)
+    public void setPageObjects(String noOfPassengers, String expectedPrice)
     {
         this.noOfPassengers = noOfPassengers;
         this.expectedPrice = expectedPrice;
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions option = new ChromeOptions();
-        option.addArguments("--headless");
-        option.addArguments("--disable-gpu");
-        option.addArguments("--window-size=1920,1200");
-        option.addArguments("--ignore-certificate-errors");
-        option.addArguments("--silent");
-        option.addArguments("--remote-allow-origins=*");
-        option.addArguments("--no-sandbox");
-        option.addArguments("--disable-dev-shm-usage");
-
-        this.driver = new ChromeDriver(option);
     }
 
     @Test
@@ -83,19 +73,5 @@ public class FlightReservationTest {
         Assert.assertTrue(flightConfirmationPage.isAt());
         Assert.assertEquals(flightConfirmationPage.getPrice(), expectedPrice);
     }
-
-    @AfterTest
-    public void quit()
-    {
-        this.driver.quit();
-    }
-
-
-
-
-
-
-
-
 
 }
