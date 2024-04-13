@@ -36,7 +36,7 @@ public abstract class AbstractTest {
         else{
             cap = new FirefoxOptions();
         }
-        return new RemoteWebDriver(new URL(""), cap);
+        return new RemoteWebDriver(new URL("http://143.110.244.31:4444/grid/console"), cap);
     }
 
     private WebDriver getLocalDriver()
