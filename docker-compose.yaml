@@ -31,4 +31,4 @@ services:
 
 networks:
   selenium-network:
-    driver: bridge
+    driver: my_bridge
