@@ -84,7 +84,7 @@
                         <browser>chrome</browser>
                     </systemPropertyVariables>
                     <suiteXmlFiles>
-                        <file>test-suite.xml</file>
+                        <file>testng.xml</file>
                     </suiteXmlFiles>
                     <threadCount>1</threadCount>
                     <reportsDirectory>target/test-output</reportsDirectory>
