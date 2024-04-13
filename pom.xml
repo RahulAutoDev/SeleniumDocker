@@ -69,7 +69,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven.compiler.version}</version>
                 <configuration>
-                    <release>17</release>
+                    <release>3.10.1</release>
                 </configuration>
             </plugin>
             <!-- To run the tests using specific parameters, change thread count, testng report output directory etc -->
