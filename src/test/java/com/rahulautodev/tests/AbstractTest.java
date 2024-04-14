@@ -43,7 +43,7 @@ public abstract class AbstractTest {
             option.addArguments("--disable-dev-shm-usage");
             option.merge(cap);
         } else {
-            FirefoxOptions options = new FirefoxOptions();
+            //FirefoxOptions options = new FirefoxOptions();
         }
         return new RemoteWebDriver(new URL("http://143.110.244.31:4444/grid/console"), option);
     }
