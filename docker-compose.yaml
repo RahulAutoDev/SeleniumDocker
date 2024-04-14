@@ -10,6 +10,8 @@ services:
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
     networks:
       - selenium-network
+    depends_on:
+      - selenium-hub
 
   selenium-firefox:
     container_name: selenium-firefox
@@ -20,6 +22,8 @@ services:
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
     networks:
       - selenium-network
+    depends_on:
+      - selenium-hub
 
   selenium-hub:
     container_name: selenium-hub
