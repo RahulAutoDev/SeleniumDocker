@@ -26,8 +26,8 @@ services:
       - selenium-hub
 
   selenium-hub:
-    container_name: selenium-hub:4.19.0
-    image: selenium/hub:latest
+    container_name: selenium-hub
+    image: selenium/hub:4.19.0
     ports:
       - "4444:4444"
     networks:
