@@ -33,6 +33,12 @@ services:
     networks:
       - selenium-network
 
+  selenium-node:
+    image: openjdk:latest
+    command: java -jar selenium-server-4.19.0.jar node --hub http://143.110.244.31:4444
+    depends_on:
+      - selenium-hub
+
 networks:
   selenium-network:
     driver: bridge

@@ -31,7 +31,6 @@ public abstract class AbstractTest {
     private WebDriver getRemoteDriver() throws MalformedURLException {
         DesiredCapabilities cap = new DesiredCapabilities();
         ChromeOptions option = null;
-        ThreadLocal threadDriver = null;
         if (System.getProperty("browser").equalsIgnoreCase("chrome")) {
             option = new ChromeOptions();
             option.addArguments("--headless");
@@ -43,14 +42,10 @@ public abstract class AbstractTest {
             option.addArguments("--no-sandbox");
             option.addArguments("--disable-dev-shm-usage");
             option.merge(cap);
-            RemoteWebDriver remoteDriver = new RemoteWebDriver(new URL("http://143.110.244.31:4444"), option);
-            threadDriver = new ThreadLocal<>();
-            threadDriver.set(remoteDriver);
         } else {
             //FirefoxOptions options = new FirefoxOptions();
         }
-        //return new RemoteWebDriver(new URL("http://143.110.244.31:4444"), option);
-        return (WebDriver) threadDriver;
+        return new RemoteWebDriver(new URL("http://143.110.244.31:4444"), option);
     }
 
     private WebDriver getLocalDriver()
